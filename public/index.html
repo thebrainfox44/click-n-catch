@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- default consent state -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500,
+        });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9D8RRPG301"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9D8RRPG301');
+    </script>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Attrape la Tête Rigolote !</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Jouez à Click & Catch en ligne ! Cliquez sur le smiley aussi vite que possible ! Marquez des points, gagnez de l'XP, débloquez des items et grimpez dans le classement.">
+    <meta name="keywords"
+        content="jeu, clicker, attrape, tête rigolote, score, classement, mobile, fun, adresse, rapidité, boutique, xp, niveaux, jeu de clic, jeu en ligne">
+    <meta name="author" content="thebrainfox">
+    <link rel="canonical" href="https://click-n-catch.thebrainfox.com/">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Click & Catch ! - Jeu de Clic Amusant">
+    <meta property="og:description"
+        content="Jouez à Click & Catch en ligne ! Cliquez sur le smiley aussi vite que possible ! Marquez des points, gagnez de l'XP, débloquez des items et grimpez dans le classement.">
+    <meta property="og:image" content="https://click-n-catch.thebrainfox.com/icon.jpg">
+    <meta property="og:url" content="https://click-n-catch.thebrainfox.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Click & Catch ! - Jeu de Clic Amusant">
+    <meta name="twitter:description"
+        content="Jouez à Click & Catch en ligne ! Cliquez sur le smiley aussi vite que possible ! Marquez des points, gagnez de l'XP, débloquez des items et grimpez dans le classement.">
+    <meta name="twitter:image" content="https://click-n-catch.thebrainfox.com/icon.jpg">
+    <!-- <meta name="twitter:site" content="@twitterhandle"> -->
+    <!-- Favicon and Apple Touch Icon -->
+    <link rel="shortcut icon" href="icon.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="icon.jpg"> <!-- For iOS home screen -->
+    <!-- Theme Color for Browsers -->
+    <meta name="theme-color" content="#ff6f91">
+    <link rel="stylesheet" href="style.css">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Click & Catch ! - Jeu de Clic Amusant",
+      "description": "Jouez à Click & Catch en ligne ! Cliquez sur le smiley aussi vite que possible ! Marquez des points, gagnez de l'XP, débloquez des items et grimpez dans le classement.",
+      "genre": ["Casual", "Clicker", "Arcade"],
+      "operatingSystem": "Any (Web-based)",
+      "applicationCategory": "Game",
+      "url": "https://click-n-catch.thebrainfox.com",
+      "image": "https://click-n-catch.thebrainfox.com/icon.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "thebrainfox"
+      },
+      "playMode": "SinglePlayer",
+      "browserRequirements": "Requires JavaScript and HTML5 support"
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Modal de nom du joueur -->
+    <div id="nameModal" class="modal">
+        <div class="modal-content">
+            <img src="icon.jpg" alt="Logo Click & Catch" class="modal-logo">
+            <h2>🎮 Bienvenue !</h2>
+            <p>Entrez votre nom pour commencer :</p>
+            <input type="text" id="playerNameInput" placeholder="Votre nom" maxlength="20">
+            <button id="confirmNameBtn">Commencer</button>
+        </div>
+    </div>
+
+    <!-- Modal d'instructions -->
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeInstructionsBtn">×</span>
+            <h2>📜 Comment Jouer ?</h2>
+            <p>Bienvenue à "Click & Catch"</p>
+            <ul>
+                <li>Cliquez sur "Démarrer le jeu".</li>
+                <li>Cliquez sur le smiley 😜 aussi vite que possible avant la fin du temps.</li>
+                <li>Chaque clic vous rapporte des points et de l'XP.</li>
+                <li>Utilisez votre XP dans la 🛍️ Boutique pour acheter de nouvelles têtes, fonds, animations,
+                    particules et des bonus !</li>
+                <li>Les thèmes combinent plusieurs éléments pour un look unique.</li>
+                <li>Montez de niveau et grimpez dans le 🏆 classement !</li>
+            </ul>
+            <p>Amusez-vous bien !</p>
+            <label class="instructions-checkbox-label">
+                <input type="checkbox" id="dontShowInstructionsAgain"> Ne plus afficher ce message
+            </label>
+            <button id="gotItBtn">Compris !</button>
+        </div>
+    </div>
+
+    <!-- Interface principale -->
+    <div id="gameContainerWrapper">
+        <!-- Top Ad Banner -->
+        <div class="ad-banner-top">
+            <div id="adSlotTopMobile" class="ad-slot">
+                <script type="text/javascript">
+                    var atOptions = { 'key': '22931ae5b5a00571a0cdf245ecd3dac3', 'format': 'iframe', 'height': 50, 'width': 320, 'params': {} };
+                </script>
+                <script type="text/javascript"
+                    src="//seventhdisdainunlucky.com/22931ae5b5a00571a0cdf245ecd3dac3/invoke.js"></script>
+            </div>
+        </div>
+
+        <div id="gameContainer">
+            <header class="game-header">
+                <div class="player-info">
+                    <h1>🎯 Click & catch!</h1>
+                    <div class="player-stats">
+                        <span id="playerName">Joueur</span>
+                        <div class="xp-bar">
+                            <span>XP: <span id="currentXP">0</span>/<span id="nextLevelXP">100</span></span>
+                            <div class="xp-progress">
+                                <div id="xpFill"></div>
+                            </div>
+                            <span>Niveau <span id="playerLevel">1</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="adSlotHeaderDesktop" class="ad-slot">
+                    <script type="text/javascript">
+                        var atOptions = { 'key': 'b17a777cc265667b632528403416c6df', 'format': 'iframe', 'height': 90, 'width': 728, 'params': {} };
+                    </script>
+                    <script type="text/javascript"
+                        src="//seventhdisdainunlucky.com/b17a777cc265667b632528403416c6df/invoke.js"></script>
+                </div>
+                <div class="shop-button-div"><button id="shopBtn" class="shop-btn">🛍️ Boutique</button></div>
+            </header>
+
+            <div class="main-content">
+                <div class="game-section">
+                    <div id="adSlotAboveGameMobile" class="ad-slot ad-slot-medium-rect">
+                        <script type="text/javascript">
+                            atOptions = {
+                                'key': '2ff025eaeef11580311b28a4b2065aef',
+                                'format': 'iframe',
+                                'height': 250,
+                                'width': 300,
+                                'params': {}
+                            };
+                        </script>
+                        <script type="text/javascript"
+                            src="//seventhdisdainunlucky.com/2ff025eaeef11580311b28a4b2065aef/invoke.js"></script>
+                    </div>
+                    <div class="game-info">
+                        <div id="scoreboard">Score : 0</div>
+                        <div id="timer">Temps restant : 30s</div>
+                    </div>
+                    <div id="gameArea" class="game-area">
+                        <div id="funnyFace" class="funny-face">😜</div>
+                    </div>
+                    <div id="message" class="message"></div>
+                    <button id="startBtn" class="start-btn">Démarrer le jeu</button>
+                </div>
+
+                <aside class="sidebar-section">
+                    <div class="leaderboard-section">
+                        <h3>🏆 Classement</h3>
+                        <div id="leaderboard" class="leaderboard">
+                            <div class="loading">Chargement...</div>
+                        </div>
+                        <button id="refreshLeaderboard" class="refresh-btn">🔄 Actualiser</button>
+                    </div>
+                    <div id="adSlotAboveGameMobile" class="ad-slot ad-slot-medium-rect">
+                        <script type="text/javascript">
+                            atOptions = {
+                                'key': '2ff025eaeef11580311b28a4b2065aef',
+                                'format': 'iframe',
+                                'height': 250,
+                                'width': 300,
+                                'params': {}
+                            };
+                        </script>
+                        <script type="text/javascript"
+                            src="//seventhdisdainunlucky.com/2ff025eaeef11580311b28a4b2065aef/invoke.js"></script>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div> <!-- End #gameContainerWrapper -->
+
+    <!-- Bottom Ad Banner -->
+    <div class="ad-banner-bottom">
+        <div id="adSlotBottomDesktop" class="ad-slot">
+            <script type="text/javascript">
+                var atOptions = { 'key': 'b17a777cc265667b632528403416c6df', 'format': 'iframe', 'height': 90, 'width': 728, 'params': {} };
+            </script>
+            <script type="text/javascript"
+                src="//seventhdisdainunlucky.com/b17a777cc265667b632528403416c6df/invoke.js"></script>
+        </div>
+        <div id="adSlotBottomDesktop" class="ad-slot">
+            <script type="text/javascript">
+                var atOptions = { 'key': 'b17a777cc265667b632528403416c6df', 'format': 'iframe', 'height': 90, 'width': 728, 'params': {} };
+            </script>
+            <script type="text/javascript"
+                src="//seventhdisdainunlucky.com/b17a777cc265667b632528403416c6df/invoke.js"></script>
+        </div>
+        <div id="adSlotBottomMobile" class="ad-slot">
+            <script type="text/javascript">
+                var atOptions = { 'key': '22931ae5b5a00571a0cdf245ecd3dac3', 'format': 'iframe', 'height': 50, 'width': 320, 'params': {} };
+            </script>
+            <script type="text/javascript"
+                src="//seventhdisdainunlucky.com/22931ae5b5a00571a0cdf245ecd3dac3/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Modal de la boutique -->
+    <div id="shopModal" class="modal">
+        <div class="modal-content shop-content">
+            <div class="modal-header">
+                <h2>🛍️ Boutique</h2>
+                <button id="closeShop" class="close-btn">×</button>
+            </div>
+            <div class="shop-tabs">
+                <button class="tab-btn active" data-tab="targets">🎯 Cibles</button>
+                <button class="tab-btn" data-tab="backgrounds">🌈 Fonds</button>
+                <button class="tab-btn" data-tab="animations">✨ Animations</button>
+                <button class="tab-btn" data-tab="particles">🎇 Particules</button>
+                <button class="tab-btn" data-tab="bonuses">⚡ Bonus</button>
+                <button class="tab-btn" data-tab="themes">🎨 Thèmes</button>
+            </div>
+            <div class="shop-content-area">
+                <div id="targetsTab" class="tab-content active">
+                    <div class="items-grid" id="targetItems"></div>
+                </div>
+                <div id="backgroundsTab" class="tab-content">
+                    <div class="items-grid" id="backgroundItems"></div>
+                </div>
+                <div id="animationsTab" class="tab-content">
+                    <div class="items-grid" id="animationItems"></div>
+                </div>
+                <div id="particlesTab" class="tab-content">
+                    <div class="items-grid" id="particleItems"></div>
+                </div>
+                <div id="bonusesTab" class="tab-content">
+                    <div class="items-grid" id="bonusItems"></div>
+                </div>
+                <div id="themesTab" class="tab-content">
+                    <div class="items-grid" id="themeItems"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
